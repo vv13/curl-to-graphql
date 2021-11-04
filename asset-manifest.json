@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/curl-to-graphql/static/css/main.ab4ee9c5.chunk.css",
-    "main.js": "/curl-to-graphql/static/js/main.a7a9c8ce.chunk.js",
-    "main.js.map": "/curl-to-graphql/static/js/main.a7a9c8ce.chunk.js.map",
+    "main.css": "/curl-to-graphql/static/css/main.41eebfa5.chunk.css",
+    "main.js": "/curl-to-graphql/static/js/main.d7b94af8.chunk.js",
+    "main.js.map": "/curl-to-graphql/static/js/main.d7b94af8.chunk.js.map",
     "runtime-main.js": "/curl-to-graphql/static/js/runtime-main.8781f4df.js",
     "runtime-main.js.map": "/curl-to-graphql/static/js/runtime-main.8781f4df.js.map",
     "static/js/2.da25df8d.chunk.js": "/curl-to-graphql/static/js/2.da25df8d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.371dfb9a.chunk.js": "/curl-to-graphql/static/js/3.371dfb9a.chunk.js",
     "static/js/3.371dfb9a.chunk.js.map": "/curl-to-graphql/static/js/3.371dfb9a.chunk.js.map",
     "index.html": "/curl-to-graphql/index.html",
-    "static/css/main.ab4ee9c5.chunk.css.map": "/curl-to-graphql/static/css/main.ab4ee9c5.chunk.css.map",
+    "static/css/main.41eebfa5.chunk.css.map": "/curl-to-graphql/static/css/main.41eebfa5.chunk.css.map",
     "static/js/2.da25df8d.chunk.js.LICENSE.txt": "/curl-to-graphql/static/js/2.da25df8d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8781f4df.js",
     "static/js/2.da25df8d.chunk.js",
-    "static/css/main.ab4ee9c5.chunk.css",
-    "static/js/main.a7a9c8ce.chunk.js"
+    "static/css/main.41eebfa5.chunk.css",
+    "static/js/main.d7b94af8.chunk.js"
   ]
 }
