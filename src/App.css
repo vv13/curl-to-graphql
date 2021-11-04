@@ -47,8 +47,14 @@
     "code code b"
     "oper oper c";
 }
-.code {
+.codeWrap {
   grid-area: code;
+  display: flex;
+  flex-direction: column;
+}
+.code {
+  flex: 1;
+  resize: none;
 }
 .operations {
   grid-area: oper;
@@ -56,14 +62,16 @@
 .show {
   white-space: pre-wrap;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .showError {
   border: 1px solid red;
   outline: none;
 }
 .targetValue {
-  width: 100%;
-  height: 100%;
+  resize: none;
+  flex: 1;
 }
 .copyBtn {
   position: absolute;

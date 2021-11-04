@@ -4,6 +4,21 @@ import classNames from "classnames";
 import "./App.css";
 import { formatter, beautyFormatInfo } from "./formatter";
 
+const configs = [
+  {
+    key: "query",
+    title: "Graphql Queries",
+  },
+  {
+    key: "variables",
+    title: "Graphql Variables",
+  },
+  {
+    key: "header",
+    title: "Request Headers",
+  },
+];
+
 function App() {
   const [input, setInput] = useState("");
   const formatInput = useMemo(() => formatter(input), [input]);
@@ -19,24 +34,29 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <textarea
-          
-          className={classNames("code", { showError: hasError })}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        ></textarea>
-        {[formatInput.query, formatInput.header, formatInput.variables].map(
-          (value) => (
+        <div className="codeWrap">
+          <h3>Source Code</h3>
+          <textarea
+            className={classNames("code", { showError: hasError })}
+            value={input}
+            placeholder="Paste code here..."
+            onChange={(e) => setInput(e.target.value)}
+          ></textarea>
+        </div>
+        {configs.map(({ key, title }) => {
+          const value = formatInput[key as keyof typeof formatInput];
+          return (
             <div className="show">
-              <textarea className="targetValue" value={value}></textarea>
+              <h3>{title}</h3>
+              <textarea readOnly className="targetValue" value={value}></textarea>
               {value && (
                 <button className="copyBtn" onClick={() => setClipbaord(value)}>
                   copy
                 </button>
               )}
             </div>
-          )
-        )}
+          );
+        })}
         <div className="operations">
           <button onClick={() => setClipbaord(beautyFormatInfo(formatInput))}>
             copy all info
