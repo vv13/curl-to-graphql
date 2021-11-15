@@ -1,7 +1,7 @@
 import shellwords from "shellwords-ts";
 import { isURL, parseField } from "./index";
 
-export const parser = (str: string): { header?: Record<string, string>; body?: string } => {
+export const parser = (str: string): { header?: Record<string, string>; body?: string; method?: string; url?: string } => {
   const s = shellwords.split(str);
   if (s[0] !== "curl") {
     return {};

@@ -44,11 +44,16 @@
   grid-gap: 20px 20px;
   grid-template-areas:
     "code code a"
-    "code code b"
+    "result result b"
     "oper oper c";
 }
 .codeWrap {
   grid-area: code;
+  display: flex;
+  flex-direction: column;
+}
+.responseInfo {
+  grid-area: result;
   display: flex;
   flex-direction: column;
 }
@@ -77,4 +82,13 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.curlHistories .MuiListItem-root {
+  padding-right: 120px;
+}
+.curlHistories .MuiListItemText-secondary {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

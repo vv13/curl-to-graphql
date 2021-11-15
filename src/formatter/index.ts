@@ -4,9 +4,11 @@ import parserGraphql from "prettier/parser-graphql";
 import { parser } from "./parser";
 
 const DefaultValue = {
+  url: "",
   query: "",
   header: "",
   variables: "",
+  method: "GET"
 };
 
 function formatter(inputStr: string) {
@@ -15,10 +17,14 @@ function formatter(inputStr: string) {
   let header;
   let variables;
   let query;
+  let method;
+  let url;
   try {
     const parsed = parser(inputStr);
     body = parsed.body || "";
     header = parsed.header || {};
+    method = parsed.method;
+    url = parsed.url;
     const jsCodes = JSON.parse(
       body.replace(/^\$/, "").replace(/\\(\\)?n/g, "")
     );
@@ -29,6 +35,8 @@ function formatter(inputStr: string) {
   }
 
   return {
+    url,
+    method,
     query: formatStrToGraphql(query),
     header: formatJsToJson(header),
     variables: formatJsToJson(variables),
@@ -61,7 +69,6 @@ const parseField = (s: string) => s.split(/: (.+)/);
 const beautyFormatInfo = (formatInput: ReturnType<typeof formatter>) => `
 Graphql Queries:
 ${formatInput.query}
-
 Graphql Variables:
 ${formatInput.variables}
 
